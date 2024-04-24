@@ -44,6 +44,9 @@ def mouseClick(x, y, button, pressed):
             clickLoc.append((x, y))
             if len(clickLoc) == len(diceKeys) + 3 + NUMSCORETYPES:
                 mouseListener.stop()
+                calibrating = not calibrating
+                printInstructions()
+                print("Calibration complete. You can now begin playing.")
                 # Save data to file for loading next time
                 file = open(cfg, 'w')
                 for i in range(len(clickLoc)):
@@ -58,7 +61,7 @@ def keyPress(key):
     if key == pauseResumeKey:
         pause = not pause
     elif key == helpKey:
-        print("'q' - Further info. After pressing q, click dice from top left to bottom right, then the roll button, then the sort button, \nand then the selection boxes from top left to bottom right, and then the browser refresh, \nand then press q again.")
+        print("'q' - Further info. After pressing q, click dice from top left to bottom right, then the roll button, then the sort button, \nand then the selection boxes from top left to bottom right, and then the browser refresh, \nand then you can play.")
         print("\nTo reiterate, the '|' can be used to pause the program so that typing elsewhere does not cause the mouse to jump around.")
         print("Calibration only needs to be done once, as the inputs will be saved and loaded if present the next time the program is run.")
         print("If you are using the default inputs provided, you just need to unpause to begin using the program.")
@@ -76,6 +79,7 @@ def keyPress(key):
         elif key == calibrateKey:
             calibrating = not calibrating
             if calibrating:
+                print("Please click the dice, then roll and sort, then scores, then refresh, all top left to bottom right.")
                 clickLoc = []
         elif key == refreshKey:
             mouse.position = clickLoc[-1]

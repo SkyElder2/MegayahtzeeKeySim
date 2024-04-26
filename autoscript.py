@@ -60,6 +60,10 @@ def keyPress(key):
     global pause, calibrating, clickLoc, scoreTab
     if key == pauseResumeKey:
         pause = not pause
+        if pause:
+            print("Paused")
+        else:
+            print("Unpaused")
     elif key == helpKey:
         print("'q' - Further info. After pressing q, click dice from top left to bottom right, then the roll button, then the sort button, \nand then the selection boxes from top left to bottom right, and then the browser refresh, \nand then you can play.")
         print("\nTo reiterate, the '|' can be used to pause the program so that typing elsewhere does not cause the mouse to jump around.")

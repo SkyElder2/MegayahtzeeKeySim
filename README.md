@@ -5,6 +5,9 @@ To resolve dependencies, run: 'pip install -r /path/to/requirements.txt'
 To start the program, run autoscript.py.
 To pause and unpause the program, use '|' (starts paused)
 
+If you want to have the console window always on top so that you can see which category you are on while playing, you can install Microsoft Powertoys.
+In that, there is a keybind you can use, Win+Ctrl+T, on a window to keep it on top while you play.
+
 Note: There is no longer a need to press 'q' after finishing the calibration.
 Now, you may begin playing immediately, and there is a console message that prints to notify you of this.
 
